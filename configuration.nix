@@ -30,12 +30,8 @@
 
   services.xserver.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
-  # exclusions from plasma
-  environment.plasma6.excludePackages = with pkgs; [
-    kdePackages.elisa
-  ];
+  services.xserver.desktopManager.mate.enable = true;
+  services.xserver.desktopManager.mate.enableWaylandSession = true;
 
   services.xserver.xkb = {
     layout = "us";
@@ -82,7 +78,6 @@
     description = "Matilde Park";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
       discord
       strawberry
       signal-desktop-beta
@@ -102,9 +97,6 @@
    nodejs
    wineWowPackages.stable
    fprintd
-   figma-linux
-   figma-agent
-   bitwig-studio
    gh
    cabextract
    samba4Full
@@ -113,7 +105,6 @@
    renpy
    unrar
    devilutionx
-   libsForQt5.kdeconnect-kde
    google-chrome
   ];
 
