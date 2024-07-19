@@ -83,23 +83,12 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
-      firefox-devedition
-      thunderbird
       discord
       strawberry
       signal-desktop-beta
       vscode-fhs
-      (appimageTools.wrapType2 {
-        name = "everdo";
-        src = fetchurl {
-        url = "https://release.everdo.net/1.9.0/Everdo-1.9.0.AppImage";
-        hash = "sha256-0yxAzM+qmgm4E726QDYS9QwMdp6dUcuvjZzWYEZx7kU=";
-        };
-      })
-      nicotine-plus
       jrnl
       clematis
-      woeusb-ng
     ];
   };
 
@@ -116,7 +105,6 @@
    figma-linux
    figma-agent
    bitwig-studio
-   keeweb
    gh
    cabextract
    samba4Full
@@ -127,7 +115,6 @@
    devilutionx
    libsForQt5.kdeconnect-kde
    google-chrome
-   google-drive-ocamlfuse
   ];
 
   environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
