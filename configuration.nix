@@ -10,7 +10,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
 
-  networking.hostName = "satsuki";
+  networking.hostName = "yomiko";
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/New_York";
