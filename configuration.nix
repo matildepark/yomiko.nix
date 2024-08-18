@@ -29,9 +29,8 @@
   };
 
   services.xserver.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.xserver.desktopManager.mate.enable = true;
-  services.xserver.desktopManager.mate.enableWaylandSession = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
@@ -75,15 +74,22 @@
   
   users.users.maru = {
     isNormalUser = true;
-    description = "Matilde Park";
+    description = "";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      brave
       discord
+      clematis
       strawberry
       signal-desktop-beta
+      sylpheed
+      protonmail-bridge
+      celeste
       vscode-fhs
+      renpy
       jrnl
-      clematis
+      senpai
+      amfora
     ];
   };
 
@@ -102,10 +108,7 @@
    samba4Full
    krb5
    winetricks
-   renpy
    unrar
-   devilutionx
-   google-chrome
   ];
 
   environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
@@ -113,6 +116,7 @@
   fonts.packages = with pkgs; [
     corefonts
     source-code-pro
+    victor-mono
     mplus-outline-fonts.githubRelease
     (iosevka-bin.override { variant = "Aile"; })
     inter
@@ -136,8 +140,6 @@
   };
   
   services.fprintd.enable = true;
-  services.fprintd.tod.enable = true;
-  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-vfs0090;
 
   networking.firewall.allowedTCPPortRanges = [ {
     from = 1714; to = 1764;
